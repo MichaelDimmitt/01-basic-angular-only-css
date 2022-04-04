@@ -11,13 +11,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      - name: npm install, build
-        run: |
-          npm install
-          npm run build
+      - uses: bahmutov/npm-install@v1
+      - name: npm install
+        run: npm install -g @lhci/cli@0.8.x
+      - name: npm build
+        run: npm run build
       - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.8.x
-          lhci autorun
+        run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
