@@ -1,0 +1,11 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./dist/scratch-angular-eleven-two-seventeen"
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
+
